@@ -1,53 +1,41 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MIAGO MVP</title>
 
-  <!-- Fredoka font from your wireframe -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- Shared app CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="frontend/css/style.css">
+  <script src="frontend/js/app.js" defer></script>
 </head>
+
 <body>
+  <main class="app" id="app"></main>
 
-  <!-- App content loads here from /pages/*.html -->
-  <main class="app" id="app">
-    <p>Loading MIAGO...</p>
-  </main>
-
-  <!-- Shared Bottom Nav -->
   <nav class="bottom-nav">
-    <button id="nav-rider" onclick="goToPage('rider')">
-      <img src="../images/bus.png" alt="Rides" class="nav-icon">
+    <button id="nav-rider" onclick="loadPage('rider')">
+      <img src="images/bus.png" class="nav-icon" alt="Rides">
     </button>
 
-    <button id="nav-golist" onclick="goToPage('golist')">
-      <span class="nav-fallback">â˜°</span>
+    <button id="nav-golist" onclick="loadPage('golist')">
+      <span class="nav-fallback">☰</span>
     </button>
 
-    <button id="nav-home" class="active" onclick="goToPage('home')">
-      <img src="../images/home.png" alt="Home" class="nav-icon">
+    <button id="nav-home" class="active" onclick="loadPage('home')">
+      <img src="images/home.png" class="nav-icon" alt="Home">
     </button>
 
-    <button id="nav-deals" onclick="goToPage('deals')">
-      <img src="../images/tag.png" alt="Deals" class="nav-icon">
+    <button id="nav-deals" onclick="loadPage('deals')">
+      <img src="images/tag.png" class="nav-icon" alt="Deals">
     </button>
 
-    <button id="nav-profile" onclick="goToPage('profile')">
-      <img src="../images/profile.png" alt="Profile" class="nav-icon">
+    <button id="nav-profile" onclick="loadPage('profile')">
+      <img src="images/profile.png" class="nav-icon" alt="Profile">
     </button>
 
-    <button id="nav-inbox" onclick="goToPage('inbox')">
-      <span class="nav-fallback">ðŸ’¬</span>
+    <button id="nav-inbox" onclick="loadPage('inbox')">
+      <span class="nav-fallback">💬</span>
     </button>
   </nav>
-
-  <!-- Shared app JS -->
-  <script src="js/app.js"></script>
 </body>
 </html>
