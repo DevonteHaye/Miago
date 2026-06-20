@@ -25,6 +25,55 @@ body{
   padding:16px;
   padding-bottom:90px;
 }
+.bottom-nav{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  max-width:430px;
+  margin:0 auto;
+  background:white;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding:10px 6px;
+  box-shadow:0 -4px 16px rgba(0,0,0,.12);
+  z-index:999;
+}
+
+.bottom-nav button{
+  border:none;
+  background:white;
+  cursor:pointer;
+  padding:8px;
+  border-radius:12px;
+  opacity:.75;
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.bottom-nav button.active{
+  border:2px solid #ddd;
+  opacity:1;
+}
+
+.nav-icon{
+  width:26px;
+  height:26px;
+  max-width:26px;
+  max-height:26px;
+  object-fit:contain;
+  display:block;
+}
+
+.nav-fallback{
+  font-size:24px;
+  color:#ff914d;
+  line-height:1;
+}
 
 .brand{ margin-bottom:12px; }
 .brand h1{ margin:0; font-size:46px; font-weight:900; letter-spacing:1px; }
