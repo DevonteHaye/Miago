@@ -9,6 +9,65 @@ const pageMap = {
   deals: "pages/deals.html",
   inbox: "pages/inbox.html"
 };
+const pageMap = {
+  home: "frontend/pages/home.html",
+  experience: "frontend/pages/experience.html",
+  rider: "frontend/pages/rider.html",
+  driver: "frontend/pages/driver.html",
+  profile: "frontend/pages/profile.html",
+  host: "frontend/pages/host.html",
+  golist: "frontend/pages/golist.html",
+  deals: "frontend/pages/deals.html",
+  inbox: "frontend/pages/inbox.html"
+};
+
+async function loadPage(pageName) {
+  const app = document.getElementById("app");
+
+  try {
+    const response = await fetch(pageMap[pageName]);
+    const html = await response.text();
+
+    app.innerHTML = html;
+
+    document.querySelectorAll(".bottom-nav button").forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+    const navMap = {
+      home: "nav-home",
+      experience: "nav-home",
+      rider: "nav-rider",
+      driver: "nav-rider",
+      golist: "nav-golist",
+      deals: "nav-deals",
+      profile: "nav-profile",
+      host: "nav-profile",
+      inbox: "nav-inbox"
+    };
+
+    if (navMap[pageName]) {
+      document.getElementById(navMap[pageName]).classList.add("active");
+    }
+
+    window.scrollTo(0, 0);
+  } catch (error) {
+    app.innerHTML = "<p>Page failed to load.</p>";
+    console.error(error);
+  }
+}
+
+function sendOffer(button) {
+  const price = prompt("Enter your offer price in JMD:");
+  if (price) {
+    button.textContent = "Offer Sent: $" + price + " JMD";
+    button.style.opacity = "0.75";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadPage("home");
+});
 
 const navMap = {
   home:"nav-home",
